@@ -1,0 +1,19 @@
+What has been achieved?
+
+React frontend is up and running
+Java backend is up and running
+Postgres is ready to go
+Postgres DB up and posting correctly (5432)
+Backend functioning properly (8080)
+
+What is not yet achieved?
+
+React frontend needs to be re-built
+- Integrate MaterialUI designs to frontend
+Add JUnit testing to backend
+Add Mocha testing to frontend
+Learn Docker then implement
+Learn Jenkins then implement
+Learn Kubernetes then implement
+Host on AWS
+
