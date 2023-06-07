@@ -1,12 +1,14 @@
 
 import 'jquery/dist/jquery.min.js'
 import Button from '@mui/material/Button'
+import LandingPage from './components/LandingPage';
+import './resources/index.css';
+import DummyText from './components/DummyText';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Test</h1>
-      <Button variant="contained">Hello World</Button>
+    <div className="diagonal-split">
+      <LandingPage></LandingPage>
     </div>
   );
 }

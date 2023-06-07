@@ -1,13 +1,28 @@
 body {
-    background-color: rgb(98, 168, 170);
+    background-color: rgb(216, 156, 235);
+    
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: aquamarine;
+    background-image: -webkit-linear-gradient(64deg, #39338d 50%, #004E95 50%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height:100vh;  /* responsive height */
+    
   }
+
+  
   
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
+  }
+
+  .main-text {
+    text-align: center;
   }
