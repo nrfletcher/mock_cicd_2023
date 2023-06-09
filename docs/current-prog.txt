@@ -11,8 +11,9 @@ What is not yet achieved?
 React frontend needs to be re-built (functional, nothing fancy)
 - Two pages (home page, data page)
 - Home page real barebones just to learn MaterialUI
-- Data page will show all current DB entries and let you add new one, that's literally it (+ some design stuff)
-- Integrate MaterialUI designs to frontend
+- Data page
+    - List all current entries in database, allow us to enter new entry, delete current ones, and modify existing ones
+
 Add JUnit testing to backend
 Add Mocha testing to frontend
 Learn Docker then implement

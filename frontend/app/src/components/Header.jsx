@@ -1,8 +1,25 @@
 import React from "react";
+import { ButtonGroup } from "@mui/material";
+import { Button } from "@mui/material";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+    typography: {
+        fontFamily: 'Georgia',
+    },
+});
 
 function Header() {
     return(
-
+        <div style={{ display: 'flex', justifyContent: 'flex-end', marginRight: 50, marginTop: 25 }}>
+            <ThemeProvider theme={theme}>
+                <ButtonGroup variant="contained" aria-label="outlined primary button group" size="large">
+                    <Button>Home</Button>
+                    <Button>API Data</Button>
+                    <Button>About</Button>
+                </ButtonGroup>
+            </ThemeProvider>
+        </div>
     );
 }
 

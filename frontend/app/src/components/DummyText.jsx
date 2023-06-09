@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import React from "react";
 
 function DummyText() {
@@ -7,6 +8,7 @@ function DummyText() {
             <p>This is some text</p>
             <p>This is some text</p>
             <p>This is some text</p>
+            <Button>Test</Button>
         </div>
     );
 }
