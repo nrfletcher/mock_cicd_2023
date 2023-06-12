@@ -11,12 +11,12 @@ const theme = createTheme({
 
 function Header() {
     return(
-        <div style={{ display: 'flex', justifyContent: 'flex-end', marginRight: 50, marginTop: 25 }}>
+        <div style={{ display: 'flex', justifyContent: 'center', paddingTop: 15 }}>
             <ThemeProvider theme={theme}>
                 <ButtonGroup variant="contained" aria-label="outlined primary button group" size="large">
-                    <Button>Home</Button>
-                    <Button>API Data</Button>
-                    <Button>About</Button>
+                    <Button style={{ paddingTop: 10, paddingBottom: 10, paddingLeft: 50, paddingRight: 50}}>Home</Button>
+                    <Button style={{ paddingTop: 10, paddingBottom: 10, paddingLeft: 50, paddingRight: 50}}>API Data</Button>
+                    <Button style={{ paddingTop: 10, paddingBottom: 10, paddingLeft: 50, paddingRight: 50}}>About</Button>
                 </ButtonGroup>
             </ThemeProvider>
         </div>

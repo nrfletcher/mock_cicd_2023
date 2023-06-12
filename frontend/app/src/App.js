@@ -1,14 +1,16 @@
 
 import 'jquery/dist/jquery.min.js'
-import Button from '@mui/material/Button'
-import LandingPage from './components/LandingPage';
 import './resources/index.css';
-import DummyText from './components/DummyText';
+import Table from './components/Table';
+import Header from './components/Header';
 
 function App() {
   return (
-    <div className="diagonal-split">
-      <LandingPage></LandingPage>
+    <div>
+      <Header className="header"></Header>
+      <div className='table'>
+        <Table className=""></Table>
+      </div>
     </div>
   );
 }
