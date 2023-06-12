@@ -2,7 +2,7 @@
 Trial run for tech stack and CICD pipeline in future project
 
 Tech stack:
-* Frontend: React, MaterialUI
+* Frontend: React, Bootstrap
 * Backend: Spring Boot
 * Persistence: PostgreSQL
 * Unit Testing: JUnit, Mocha
