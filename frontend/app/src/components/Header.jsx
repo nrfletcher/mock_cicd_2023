@@ -14,7 +14,7 @@ function Header() {
     return(
         <div style={{ display: 'flex', justifyContent: 'center', paddingTop: 15 }}>
             <ThemeProvider theme={theme}>
-                <ButtonGroup variant="contained" aria-label="outlined primary button group" size="large">
+                <ButtonGroup variant="contained" aria-label="outlined primary button group" size="large" >
                     <Link to="/">
                         <Button style={{ paddingTop: 10, paddingBottom: 10, paddingLeft: 50, paddingRight: 50}}>Home</Button>
                     </Link>

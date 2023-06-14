@@ -1,0 +1,52 @@
+.home h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(78, 115, 219);
+    text-align: center;
+    font-weight: bolder;
+    font-size: 5em;
+    text-shadow: -5px 4px black;
+}
+
+.home p {
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 25px;
+    text-shadow: -2px 1.5px black;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(17, 114, 241);
+    text-align: center;
+    font-weight: bolder;
+    font-size: 5em;
+    text-shadow: -5px 4px black;
+}
+
+.about p {
+    color: rgb(255, 255, 255);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 25px;
+    text-shadow: -2px 1.5px black;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.data h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-weight: bolder;
+    font-size: 4em;
+    text-shadow: -5px 4px black;
+}
+
+.data Table {
+    margin: auto;
+}
