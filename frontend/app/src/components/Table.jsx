@@ -14,6 +14,9 @@ const Table = () => {
 
     return (
         <div>
+            <div style={{marginLeft:'25'}}>
+                <button className='btn'>New Item</button>
+            </div>
             <table>
                 <thead>
                     <tr style={{ marginBottom: '10px'}}>
@@ -43,8 +46,8 @@ const TableRow = ({ item, removeItem }) => {
 
     return (
         <tr style={{ margin: '5px'}}>
-            <td style={{ padding: '25px'}}>{item.id}</td>
-            <td style={{ padding: '45px'}}>{item.name}</td>
+            <td style={{ padding: '25px' }}>{item.id}</td>
+            <td style={{ padding: '45px' }}>{item.name}</td>
             <td>
                 <button onClick={handleDelete} className='btn' style={{marginRight: '15px'}}>Delete</button>
                 <button onClick={handleDelete} className='btn'>Modify</button>
