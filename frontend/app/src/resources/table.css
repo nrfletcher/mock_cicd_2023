@@ -1,8 +1,5 @@
 .btn {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
   padding: 15px 15px;
   border: none;
   border-radius: 15%;
@@ -40,3 +37,5 @@ th {
   text-shadow: -2px 1.5px rgb(0, 0, 0);
   padding: 1px;
 }
+
+

@@ -6,7 +6,7 @@ const Data = () => {
     return (
         <div className='data'>
             <h1>Table API Data</h1>
-            <div>
+            <div className="centered">
                 <Table ></Table>
             </div>
         </div>

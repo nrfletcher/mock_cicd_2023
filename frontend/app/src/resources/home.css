@@ -47,6 +47,9 @@
     text-shadow: -5px 4px black;
 }
 
-.data Table {
-    margin: auto;
-}
+.centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
