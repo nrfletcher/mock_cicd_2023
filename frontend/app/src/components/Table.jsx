@@ -1,5 +1,13 @@
 import React, { useState } from 'react';
 import '../resources/table.css';
+import axios from 'axios';
+import React, {useState, useEffect} from 'react';
+
+async function getAllCars() {
+    let result = await axios.get("http://localhost:8080/cicd/cars");
+    let items = Array.from(result.data);
+    return items;
+}
 
 const Table = () => {
     const [cars, setItems] = useState([
@@ -7,6 +15,12 @@ const Table = () => {
         { id: 2, make: 'BMW', model: '335i', horsePower: '125', msrp: '55000'},
         { id: 3, make: 'BMW', model: '335i', horsePower: '125', msrp: '55000'}
     ]);
+
+    let [carDefs, setCars] = useState([]);
+
+    useEffect(() => {
+        getAllCars().then(carDefs => setCars(carDefs));
+    }, []);
 
     const removeItem = (itemId) => {
         setItems(cars.filter(item => item.id !== itemId));
