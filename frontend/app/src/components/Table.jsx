@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import '../resources/table.css';
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
@@ -7,6 +6,26 @@ async function getAllCars() {
     let result = await axios.get("http://localhost:8080/cicd/cars");
     let items = Array.from(result.data);
     return items;
+}
+
+async function modifyCar() {
+    axios.put(url, data)
+    .then(response => {
+      console.log(response.data);
+    })
+    .catch(error => {
+      console.error(error);
+    });
+}
+
+async function removeCar() {
+    axios.delete(url)
+    .then(response => {
+      console.log(response.data);
+    })
+    .catch(error => {
+      console.error(error);
+    });
 }
 
 const Table = () => {
