@@ -53,6 +53,16 @@ const Table = () => {
     return (
         <div>
             <button className='btn'>Create New Item</button>
+            <form>
+                <label htmlFor="make"> Make: </label>
+                <input type="text" id="make" name="make" />
+                <label htmlFor="model"> Model: </label>
+                <input type="text" name="model" id="model" />
+                <label htmlFor="horsepower"> Horsepower: </label>
+                <input type="text" id="horsepower" name="horsepower" />
+                <label htmlFor="msrp"> MSRP: </label>
+                <input type="text" name="msrp" id="msrp" />
+            </form>
             <table>
                 <thead>
                     <tr style={{ marginBottom: '10px'}}>
