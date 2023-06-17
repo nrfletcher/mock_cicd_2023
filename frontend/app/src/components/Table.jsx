@@ -1,6 +1,6 @@
 import '../resources/table.css';
 import axios from 'axios';
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 
 async function getAllCars() {
     let result = await axios.get("http://localhost:8080/carapp/cars");
@@ -50,9 +50,12 @@ const Table = () => {
         }
     };
 
+    const addNewItem = () => {
+        console.log('Add new item');
+    };
+
     return (
-        <div>
-            <button className='btn'>Create New Item</button>
+        <div className='forms'>
             <form>
                 <label htmlFor="make"> Make: </label>
                 <input type="text" id="make" name="make" />
@@ -63,6 +66,7 @@ const Table = () => {
                 <label htmlFor="msrp"> MSRP: </label>
                 <input type="text" name="msrp" id="msrp" />
             </form>
+            <button className='btn' onClick={addNewItem}>Create New Item</button>
             <table>
                 <thead>
                     <tr style={{ marginBottom: '10px'}}>
