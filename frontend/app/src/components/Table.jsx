@@ -3,12 +3,12 @@ import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 
 async function getAllCars() {
-    let result = await axios.get("http://localhost:8080/cicd/cars");
+    let result = await axios.get("http://localhost:8080/carapp/cars");
     let items = Array.from(result.data);
     return items;
 }
 
-async function modifyCar() {
+async function modifyCar(url, data) {
     axios.put(url, data)
     .then(response => {
       console.log(response.data);
@@ -18,7 +18,7 @@ async function modifyCar() {
     });
 }
 
-async function removeCar() {
+async function removeCar(url) {
     axios.delete(url)
     .then(response => {
       console.log(response.data);
@@ -41,8 +41,13 @@ const Table = () => {
         getAllCars().then(carDefs => setCars(carDefs));
     }, []);
 
-    const removeItem = (itemId) => {
-        setItems(cars.filter(item => item.id !== itemId));
+    const removeItem = (carId) => {
+        removeCar(`http://localhost:8080/carapp/cars/${carId}`);
+        try {
+            setCars(carDefs.filter((car) => car.id !== carId));
+        } catch {
+            console.error('Trouble deleting');
+        }
     };
 
     return (
@@ -59,10 +64,10 @@ const Table = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {cars.map(item => (
+                    {carDefs.map(car => (
                         <TableRow
-                            key={item.id}
-                            item={item}
+                            key={car.id}
+                            car={car}
                             removeItem={removeItem}
                         />
                     ))}
@@ -72,18 +77,18 @@ const Table = () => {
     );
 };
 
-const TableRow = ({ item, removeItem }) => {
+const TableRow = ({ car, removeItem }) => {
     const handleDelete = () => {
-        removeItem(item.id);
+        removeItem(car.id);
     };
 
     return (
         <tr style={{ margin: '5px'}}>
-            <td style={{ padding: '25px' }}>{item.id}</td>
-            <td style={{ padding: '45px' }}>{item.make}</td>
-            <td style={{ padding: '45px' }}>{item.model}</td>
-            <td style={{ padding: '45px' }}>{item.horsePower}</td>
-            <td style={{ padding: '45px' }}>{item.msrp}</td>
+            <td style={{ padding: '25px' }}>{car.id}</td>
+            <td style={{ padding: '45px' }}>{car.carMake}</td>
+            <td style={{ padding: '45px' }}>{car.carModel}</td>
+            <td style={{ padding: '45px' }}>{car.horsePower}</td>
+            <td style={{ padding: '45px' }}>{car.msrp}</td>
             <td>
                 <button onClick={handleDelete} className='btn' style={{marginRight: '15px'}}>Delete</button>
                 <button onClick={handleDelete} className='btn'>Modify</button>
