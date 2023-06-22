@@ -18,6 +18,17 @@ async function modifyCar(url, data) {
     });
 }
 
+async function addCar(url, data) {
+    axios.post(url, data)
+    .then(function (response) {
+    console.log(response);
+    return response;
+    })
+    .catch(function (error) {
+    console.log(error);
+    });
+}
+
 async function removeCar(url) {
     axios.delete(url)
     .then(response => {
@@ -50,23 +61,23 @@ const Table = () => {
         }
     };
 
-    const addNewItem = () => {
-        console.log('Add new item');
+    const addNewItem = (data) => {
+        addCar("http://localhost:8080/carapp/cars", data)
+        .then(() => {
+            getAllCars().then(carDefs => setCars(carDefs));
+        })
+        .catch((error) => {
+        console.error("Error adding new item:", error);
+        });
+    };
+
+    const modifyItem = () => {
+        // Still to be implemented
     };
 
     return (
         <div className='forms'>
-            <form>
-                <label htmlFor="make"> Make: </label>
-                <input type="text" id="make" name="make" />
-                <label htmlFor="model"> Model: </label>
-                <input type="text" name="model" id="model" />
-                <label htmlFor="horsepower"> Horsepower: </label>
-                <input type="text" id="horsepower" name="horsepower" />
-                <label htmlFor="msrp"> MSRP: </label>
-                <input type="text" name="msrp" id="msrp" />
-            </form>
-            <button className='btn' onClick={addNewItem}>Create New Item</button>
+            <Form addNewItem={addNewItem}></Form>
             <table>
                 <thead>
                     <tr style={{ marginBottom: '10px'}}>
@@ -110,5 +121,54 @@ const TableRow = ({ car, removeItem }) => {
         </tr>
     );
 };
+
+const Form = ( { addNewItem }) => {
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const make = formData.get('make');
+      const model = formData.get('model');
+      const horsepower = formData.get('hp');
+      const msrp = formData.get('msrp');
+      
+      handleFormSubmission(make, model, horsepower, msrp);
+    };
+  
+    const handleFormSubmission = (make, model, horsepower, msrp) => {
+        const newCar = {
+            carMake: make,
+            carModel: model,
+            horsePower: horsepower,
+            msrp: msrp
+        };
+        addNewItem(newCar);
+    };
+  
+    return (
+      <form onSubmit={handleSubmit} className='forms'>
+        <label>
+          Make:
+          <input type="text" name="make" />
+        </label>
+  
+        <label>
+          Model:
+          <input type="text" name="model" />
+        </label>
+  
+        <label>
+          Horsepower:
+          <input type="text" name="hp" />
+        </label>
+
+        <label>
+          MSRP:
+          <input type="text" name="msrp" />
+        </label>
+  
+        <button type="submit">Submit</button>
+      </form>
+    );
+  };
 
 export default Table;
