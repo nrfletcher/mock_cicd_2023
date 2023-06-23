@@ -5,5 +5,5 @@ Tech stack:
 * Frontend: React, Bootstrap
 * Backend: Spring Boot
 * Persistence: PostgreSQL
-* Unit Testing: JUnit, Mocha
+* Unit Testing: JUnit, Jest, Mockito
 * DevOps/CICD/Deploy: Docker, Kubernetes, Jenkins, AWS
