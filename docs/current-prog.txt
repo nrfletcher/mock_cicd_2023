@@ -14,7 +14,7 @@ React frontend needs to be re-built (functional, nothing fancy)
     - List all current entries in database, allow us to enter new entry, delete current ones, and modify existing ones
 
 Add JUnit testing to backend
-Add Mocha testing to frontend
+Add JS testing to frontend
 Learn Docker then implement
 Learn Jenkins then implement
 Learn Kubernetes then implement
